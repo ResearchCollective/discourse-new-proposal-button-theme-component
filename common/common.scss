@@ -5,6 +5,9 @@
   #new-create-topic i {
     margin-right: 0;
   }
+  #new-create-topic {
+    background-color: #0f82af;
+  }
 }
 
 @if $New_topic_button_text == "" {

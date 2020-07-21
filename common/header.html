@@ -1,4 +1,5 @@
-<script type="text/discourse-plugin" version="0.8.18">
+<!--<script type="text/discourse-plugin" version="0.8.18">-->
+<script type="text/javascript" version="0.8.18">
 api.decorateWidget("header-buttons:after", helper => {
   if (Discourse.User.current()) {
 
@@ -19,9 +20,9 @@ api.decorateWidget("header-buttons:after", helper => {
       const Composer = require("discourse/models/composer").default;
       const controller = container.lookup("controller:navigation/category");
       const composerController = container.lookup("controller:composer");
-
+      const onClick = ()=>{console.log("clicked!!")}
       composerController.open({
-        action: Composer.CREATE_TOPIC,
+        action: onClick,
         draftKey: Composer.DRAFT,
 
         // set the category id below
