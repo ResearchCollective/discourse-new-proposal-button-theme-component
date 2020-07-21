@@ -31,7 +31,7 @@ api.decorateWidget("header-buttons:after", helper => {
     });
   };
 
-  return [helper.h(
+  return helper.h(
     ntb_button_helper,
     {
       className: ntb_button_class,
@@ -40,15 +40,5 @@ api.decorateWidget("header-buttons:after", helper => {
     },
     [iconNode(ntb_icon), helper.h(ntb_label_helper, ntb_text)]
   );
-}),
-ntb_button_helper,
-    {
-      className: ntb_button_class,
-      title: ntb_title,
-      onclick: createTopic
-    },
-    [iconNode(ntb_icon), helper.h(ntb_label_helper, ntb_text)]
-  );
-})
-];
+});
 </script>
