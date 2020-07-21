@@ -4,14 +4,13 @@ api.decorateWidget("header-buttons:after", helper => {
 
     // edit these two to your liking
     var $ntb_text = "Propose New Experiment",
-      $ntb_icon = "plus",
 
       // no need to edit these
-      $ntb_icon_class = ".fa-" + $ntb_icon,
+      $ntb_icon_class = ".fa-plus",
       $ntb_button_class = "btn btn-default btn btn-icon-text",
       $ntb_button_helper = "button#new-create-topic-custom",
       $ntb_icon_helper =
-        "i.fa" + $ntb_icon_class + ".d-icon .d-icon-" + $ntb_icon,
+        "i.fa" + $ntb_icon_class + ".d-icon .d-icon-plus",
       $ntb_label_helper = "span.d-button-label";
 
     const createTopicCustom = function() {
@@ -19,9 +18,9 @@ api.decorateWidget("header-buttons:after", helper => {
       const Composer = require("discourse/models/composer").default;
       const controller = container.lookup("controller:navigation/category");
       const composerController = container.lookup("controller:composer");
-      const onClick = ()=>{console.log("clicked!!")}
+
       composerController.open({
-        action: onClick,
+        action: Composer.CREATE_TOPIC,
         draftKey: Composer.DRAFT,
 
         // set the category id below
